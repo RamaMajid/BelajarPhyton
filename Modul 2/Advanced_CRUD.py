@@ -2,8 +2,7 @@ admin_account = ("admin", "admin")
 users = {}
 courses = []
 
-def register():
-    nim = input("Masukkan NIM: ")
+def register(users, nim, password, nama):
     if nim in users:
         return "NIM sudah terdaftar, silahkan login."
     
@@ -46,8 +45,7 @@ def lihat_kursus():
     else:
         return "Belum ada kursus yang ditambahkan."
 
-def edit_kursus():
-    id_kursus = input("Masukkan ID Kursus yang ingin diedit: ")
+def edit_kursus(courses, id_kursus, nama_kursus=None, instruktur=None, durasi=None):
     for kursus in courses:
         if kursus[0] == id_kursus:
             nama_kursus = input("Nama Kursus baru: ")
